@@ -1,7 +1,11 @@
 {
-    "files.associations": {
-        "ostream": "cpp",
-        "iostream": "cpp",
-        "algorithm": "cpp"
-    }
+  "files.associations": {
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "algorithm": "cpp",
+    "random": "cpp",
+    "bitset": "cpp",
+    "chrono": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "Disabled"
 }
