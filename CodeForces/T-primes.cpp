@@ -1,31 +1,38 @@
 #include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 int main()
 {
-    int n, x;
+    int n, x, p;
     cin >> n;
     for (int i = 0; i < n; i++)
     {
         cin >> x;
-        int r = 2;
-        for (int i = 2; i <= x / 2; i++)
+        p = sqrt(x);
+        for (int i = 2; i <= sqrt(p); i++)
         {
-            if (x % i == 0)
+            if (p % i != 0)
             {
-                r = r + 1;
+                cout << "YES" << endl;
+            }
+            else
+            {
+                cout << "NO" << endl;
             }
         }
-        if (r == 3)
-        {
-            cout << "YES" << endl;
-        }
-        else
-        {
-            cout << "NO" << endl;
-        }
-    }
 
-    return 0;
+        //     if (r == 3)
+        //     {
+        //         cout << "YES" << endl;
+        //     }
+        //     else
+        //     {
+        //         cout << "NO" << endl;
+        //     }
+        // }
+
+        return 0;
+    }
 }
