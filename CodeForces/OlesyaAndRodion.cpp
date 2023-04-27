@@ -5,19 +5,42 @@ using namespace std;
 
 int main()
 {
-    int n, t, a, b, p;
+    long long int n, r = 0, p = 0, x;
+    string t, s;
     cin >> n >> t;
-    p = n - 1;
-    a = round(pow(10, p));
-    b = pow(10, n);
-    while (a < b)
+    int temp = stoi(t);
+    x = temp;
+    while (temp > 0)
     {
-        if (a % t == 0)
+        p++;
+        temp = (temp / 10);
+    }
+    if (p > n)
+    {
+        cout << -1 << endl;
+    }
+    else if (p <= n && p >= 2)
+    {
+        for (int i = n; i >= 1; i--)
         {
-            cout << a << endl;
-            break;
+            if (x < 10)
+            {
+                r = r + (x * (round(pow(10, i - 1))));
+            }
+            else
+            {
+                r = r + (x * (round(pow(10, i - p))));
+            }
         }
-        a++;
+        cout << to_string(r) << endl;
+    }
+    else
+    {
+        for (int i = n; i >= 1; i--)
+        {
+            s = s + t;
+        }
+        cout << s << endl;
     }
 
     return 0;

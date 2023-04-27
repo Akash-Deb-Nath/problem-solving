@@ -4,74 +4,35 @@ using namespace std;
 
 int main()
 {
-    int n, r, p;
+    int n, r;
     cin >> n;
-    // if (n >= 4)
-    // {
-    //     while (n >= 0)
-    //     {
-    //         if (n % 10 == 4 || n % 10 == 7)
-    //         {
-    //             r = 1;
-    //         }
-    //         else
-    //         {
-    //             r = 0;
-    //             break;
-    //         }
-    //         n = n / 10;
-    //     }
-    // }
-    // if (r == 1)
-    // {
-    //     cout << "YES" << endl;
-    // }
-    // else if (n % 4 == 0 || n % 7 == 0)
-    // {
-    //     cout << "YES" << endl;
-    // }
-    // else
-    // {
-    //     cout << "NO" << endl;
-    // }
-
-    for (int i = n; i >= 1; i--)
+    int temp = n;
+    if (n >= 4)
     {
-        if (i >= 4)
+        while (n > 0)
         {
-            while (i >= 0)
+            if (n % 10 == 4 || n % 10 == 7)
             {
-                if (i % 10 == 4 || i % 10 == 7)
-                {
-                    r = 1;
-                }
-                else
-                {
-                    r = 0;
-                    break;
-                }
-                i = i / 10;
+                r = 1;
             }
-        }
-        if (r == 1 || i % 4 == 0 || i % 7 == 0)
-        {
-            // cout << "YES" << endl;
-            if (n % i == 0)
+            else
             {
-                p = 1;
-                cout << "YES" << endl;
+                r = 0;
+                break;
             }
-        }
-        else
-        {
-            p = 0;
+            n = n / 10;
         }
     }
-    if (p == 1)
+    n = temp;
+    if (r == 1)
     {
         cout << "YES" << endl;
     }
-    else if (p == 0)
+    else if (n % 4 == 0 || n % 7 == 0 || n % 47 == 0)
+    {
+        cout << "YES" << endl;
+    }
+    else
     {
         cout << "NO" << endl;
     }

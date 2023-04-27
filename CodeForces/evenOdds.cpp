@@ -3,34 +3,27 @@ using namespace std;
 
 int main()
 {
-    int x, n, i, j, a[100000], r = 1, l, p = 2;
+    long long int x, n, r = 1, l;
     cin >> x >> n;
-    if (x % 2 == 0)
+    l = (x / 2);
+    for (int i = 1; i <= x; i += 2)
     {
-        l = (x / 2);
-    }
-    else if (x % 2 != 0)
-    {
-        l = (x / 2) + 1;
-    }
-
-    for (i = 1; i <= l; i++)
-    {
-        a[i - 1] = r;
-        r = r + 2;
-        if (n == i)
+        if (r == n)
         {
-            cout << a[n - 1];
+            cout << i << endl;
+            return 0;
         }
+        r++;
     }
-    for (i = l; i < x; i++)
+    int p = r;
+    for (int i = 2; i <= x; i += 2)
     {
-        a[l] = p;
-        p = p + 2;
-        if ((n - 1) == i)
+        if (p == n)
         {
-            cout << a[l];
+            cout << i << endl;
+            return 0;
         }
+        p++;
     }
 
     return 0;

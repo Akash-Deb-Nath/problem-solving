@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -11,19 +11,13 @@ int main()
     {
         cin >> x[i];
     }
+    sort(x, x + n);
     cin >> p;
     for (int i = 0; i < p; i++)
     {
         cin >> a;
-        for (int i = 0; i < n; i++)
-        {
-            if (a >= x[i])
-            {
-                r = r + 1;
-            }
-        }
-        cout << r << endl;
-        r = 0;
+        int upper1 = upper_bound(x, x + n, a) - x;
+        cout << upper1 << endl;
     }
 
     return 0;
