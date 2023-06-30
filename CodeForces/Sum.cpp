@@ -1,16 +1,20 @@
-#include <iostream>
 #include <bits/stdc++.h>
 
 using namespace std;
 
 int main()
 {
-    int n, p;
-    cin >> n;
-    for (int i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    int a[3];
+    for (int i = 0; i < t; i++)
     {
-        cin >> p;
-        if ((sqrt(p) * sqrt(p)) == p && p > 1)
+        for (int j = 0; j < 3; j++)
+        {
+            cin >> a[j];
+        }
+        sort(a, a + 3);
+        if (a[0] + a[1] == a[2])
         {
             cout << "YES" << endl;
         }
@@ -19,6 +23,5 @@ int main()
             cout << "NO" << endl;
         }
     }
-
     return 0;
 }
