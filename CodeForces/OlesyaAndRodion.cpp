@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     long long int n, r = 0, p = 0, x;
-    string t, s;
+    string t, s, result;
     cin >> n >> t;
     int temp = stoi(t);
     x = temp;
@@ -19,6 +19,19 @@ int main()
     {
         cout << -1 << endl;
     }
+    else if (n > 18 && (x >= 10 && x % 10 == 0))
+    {
+        for (int i = 0; i < n - p; i++)
+        {
+            result = result + t[0];
+        }
+        while (p--)
+        {
+            result = result + "0";
+        }
+        cout << result << endl;
+    }
+
     else if (p <= n && p >= 2)
     {
         for (int i = n; i >= 1; i--)

@@ -9,31 +9,9 @@ int main()
     for (int i = 0; i < t; i++)
     {
         cin >> n;
-        if (n >= 2020)
+        if (n % 2020 <= n / 2020)
         {
-            if (n % 2 == 0)
-            {
-                if (n % 2020 == 0 || n % 2021 == 0)
-                {
-                    cout << "YES" << endl;
-                }
-                else
-                {
-                    cout << "NO" << endl;
-                }
-            }
-            else
-            {
-                n = n - 2021;
-                if ((n % 2020 == 0 || n % 2021 == 0))
-                {
-                    cout << "YES" << endl;
-                }
-                else
-                {
-                    cout << "NO" << endl;
-                }
-            }
+            cout << "YES" << endl;
         }
         else
         {
