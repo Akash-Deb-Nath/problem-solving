@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-    int n, m, result;
+    int n;
+    long long int m;
     cin >> n >> m;
     int a[m];
     for (int i = 0; i < m; i++)
@@ -12,20 +13,12 @@ int main()
         cin >> a[i];
     }
     sort(a, a + m);
-    int minPuzzle = INT_MAX;
-    if (m - n > 0)
+    int result = INT_MAX;
+    for (int i = 0; i <= m - n; i++)
     {
-        for (int i = 0; i < m - n; i++)
-        {
-            result = min(minPuzzle, a[i + n - 1] - a[i]);
-            cout << result << endl;
-        }
-        cout << result << endl;
+        result = min(result, a[i + n - 1] - a[i]);
     }
-    else
-    {
-        cout << 0 << endl;
-    }
+    cout << result << endl;
 
     return 0;
 }

@@ -17,12 +17,14 @@ int main()
             cin >> a[i];
             s.insert(a[i]);
         }
-        int count = 0;
-        for (auto i = 0; i < s.size(); i++)
+        if (s.size() % 2 == n % 2)
         {
-            count++;
+            cout << s.size() << endl;
         }
-        cout << count << endl;
+        else
+        {
+            cout << s.size() - 1 << endl;
+        }
     }
     return 0;
 }

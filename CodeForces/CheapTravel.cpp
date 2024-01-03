@@ -8,13 +8,13 @@ int main()
     cin >> n >> m >> a >> b;
     if (m * a <= b)
     {
-        cout << n << endl;
+        cout << n * a << endl;
     }
     else
     {
         x = n / m;
-        r = m * x;
-        cout << x << " " << r << " " << r * a << endl;
+        r = x * b;
+        cout << r + min((n % m) * a, b) << endl;
     }
 
     return 0;

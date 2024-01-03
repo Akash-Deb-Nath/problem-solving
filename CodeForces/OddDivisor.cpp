@@ -9,7 +9,7 @@ int main()
     for (int i = 0; i < t; i++)
     {
         cin >> n;
-        if (n > 1 && n % 2 != 0)
+        if (n & (n - 1))
         {
             cout << "YES" << endl;
         }

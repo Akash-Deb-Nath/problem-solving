@@ -10,18 +10,25 @@ int main()
     {
         int n, d;
         cin >> n >> d;
-        string str;
-        cin >> str;
-        for (int i = 0; i < n; i++)
+        string s;
+        cin >> s;
+        for (int i = 0; i < n + 1; ++i)
         {
-            if (str[i] - '0' <= d)
+            if (s[i] - '0' >= d)
             {
-                str.insert(i, to_string(d));
+                cout << s[i];
+            }
+            else
+            {
+                cout << d;
+                for (int j = i; j < n; ++j)
+                {
+                    cout << s[j];
+                }
+                cout << endl;
                 break;
             }
-            cout << str << endl;
         }
-
-        return 0;
     }
+    return 0;
 }
