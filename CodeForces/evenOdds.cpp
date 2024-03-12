@@ -3,28 +3,18 @@ using namespace std;
 
 int main()
 {
-    long long int x, n, r = 1, l;
-    cin >> x >> n;
-    l = (x / 2);
-    for (int i = 1; i <= x; i += 2)
+    long long int n, k;
+    cin >> n >> k;
+    n = (n + 1) / 2;
+    if (k <= n)
     {
-        if (r == n)
-        {
-            cout << i << endl;
-            return 0;
-        }
-        r++;
+        k = 2 * k - 1;
     }
-    int p = r;
-    for (int i = 2; i <= x; i += 2)
+    else
     {
-        if (p == n)
-        {
-            cout << i << endl;
-            return 0;
-        }
-        p++;
+        k = 2 * (k - n);
     }
+    cout << k << endl;
 
     return 0;
 }
