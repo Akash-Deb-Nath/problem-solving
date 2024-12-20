@@ -2,25 +2,34 @@
 
 using namespace std;
 
+#define ll long long int
+
 int main()
 {
-    int n, a, b, c, d;
-    cin >> n;
-    for (int i = 0; i < n; i++)
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        int r = 0, ans = 0, maximum = INT_MIN;
-        cin >> a >> b;
-        while (a <= b)
+        ll l, r;
+        cin >> l >> r;
+        ll mx = -1, ans = 0;
+        for (ll i = l; i <= r; i++)
         {
-            c = a / 10;
-            d = a % 10;
-            r = c - d;
-            if (abs(r) > maximum && a < 100)
+            string s = to_string(i);
+            ll temp = (*max_element(s.begin(), s.end())) - (*min_element(s.begin(), s.end()));
+            if (temp > mx)
             {
-                ans = a;
+                mx = temp;
+                ans = i;
             }
-            maximum = r;
-            a++;
+            if (mx == 9)
+            {
+                break;
+            }
         }
         cout << ans << endl;
     }

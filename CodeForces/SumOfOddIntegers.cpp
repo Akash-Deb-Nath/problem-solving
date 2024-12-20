@@ -1,15 +1,22 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
+#define ll long long int
+
 int main()
 {
-    int x, n, t;
-    cin >> x;
-    for (int i = 0; i < x; i++)
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t;
+    cin >> t;
+    while (t--)
     {
-        cin >> n >> t;
-        if ((n % 2 == 0 && t % 2 == 0) || (n % 2 != 0 && t == 1))
+        ll n, k;
+        cin >> n >> k;
+        if (n % 2 == k % 2 && n >= k * k)
         {
             cout << "YES" << endl;
         }

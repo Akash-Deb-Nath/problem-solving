@@ -14,26 +14,51 @@ int main()
         cin >> s;
         ll q;
         cin >> q;
-        string check = "1100";
-
-        for (ll i = 0; i < q; i++)
+        ll n = s.size();
+        ll count = 0;
+        for (ll i = 0; i < n - 3; i++)
+        {
+            if (s.substr(i, 4) == "1100")
+            {
+                count++;
+            }
+        }
+        while (q--)
         {
             ll a;
             char b;
             cin >> a >> b;
-            a -= 1;
-
-            if (a >= 0 && a < s.size())
+            a--;
+            for (ll i = a - 3; i < a + 1; i++)
             {
-                s[a] = b;
-                if (s.find(check) != std::string::npos)
+                if (i < 0 || i + 3 > n)
                 {
-                    cout << "Yes" << endl;
+                    continue;
                 }
-                else
+                if (s.substr(i, 4) == "1100")
                 {
-                    cout << "No" << endl;
+                    count--;
                 }
+            }
+            s[a] = b;
+            for (ll i = a - 3; i < a + 1; i++)
+            {
+                if (i < 0 || i + 3 > n)
+                {
+                    continue;
+                }
+                if (s.substr(i, 4) == "1100")
+                {
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                cout << "Yes" << endl;
+            }
+            else
+            {
+                cout << "No" << endl;
             }
         }
     }

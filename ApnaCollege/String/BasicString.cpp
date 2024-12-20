@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    // string str;
+    string str;
     cin >> str;
     cout << str << endl;
 
@@ -35,10 +35,10 @@ int main()
     string str6, str7;
     cin >> str6 >> str7;
     if (!str7.compare(str6))
-        Or if (str7.compare(str6) == 0)
-        {
-            cout << "Strings are equal" << endl;
-        }
+    // Or if (str7.compare(str6) == 0)
+    {
+        cout << "Strings are equal" << endl;
+    }
     else
     {
         cout << "Strings are not equal" << endl;

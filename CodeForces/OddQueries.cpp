@@ -2,49 +2,41 @@
 
 using namespace std;
 
+#define ll long long int
+
 int main()
 {
-    int t, n, q, l, r, k, p = 0;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    ll t;
     cin >> t;
-    for (int i = 0; i < t; i++)
+    while (t--)
     {
+        ll n, q;
         cin >> n >> q;
-        int a[n], temp[n];
-        for (int i = 0; i < n; i++)
+        vector<ll> a(n + 1);
+        for (ll i = 1; i <= n; i++)
         {
             cin >> a[i];
+            a[i] = a[i] + a[i - 1];
         }
-        for (int i = 0; i < n; i++)
+        while (q--)
         {
-            temp[i] = a[i];
-        }
-        for (int i = 0; i < q; i++)
-        {
+            ll l, r, k;
             cin >> l >> r >> k;
-            p = 0;
-            for (int i = 0; i < n; i++)
+            ll ans = a[n] - (a[r] - a[l - 1]) + ((r - l + 1) * k);
+            if (ans & 1)
             {
-                a[i] = temp[i];
-            }
-            for (int i = l - 1; i <= r - 1; i++)
-            {
-                a[i] = k;
-            }
-            for (int i = 0; i < n; i++)
-            {
-                p = p + a[i];
-            }
-            if (p % 2 != 0)
-            {
-                cout << "YES" << endl;
+                cout << "Yes" << endl;
             }
             else
             {
-                cout << "NO" << endl;
+                cout << "No" << endl;
             }
-
-            cout << endl;
         }
     }
+
     return 0;
 }
