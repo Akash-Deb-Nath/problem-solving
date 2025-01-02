@@ -14,9 +14,23 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll x;
-        cin >> x;
-        if (x % 33 == 0)
+        ll n;
+        cin >> n;
+        vector<ll> a(n);
+        for (auto &i : a)
+        {
+            cin >> i;
+        }
+        bool flag = 1;
+        for (ll i = 0; i + 2 < n; i++)
+        {
+            if (a[i] % 2 != a[i + 2] % 2)
+            {
+                flag = 0;
+                break;
+            }
+        }
+        if (flag)
         {
             cout << "Yes" << endl;
         }

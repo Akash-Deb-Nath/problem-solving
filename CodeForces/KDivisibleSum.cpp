@@ -14,16 +14,12 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll x;
-        cin >> x;
-        if (x % 33 == 0)
-        {
-            cout << "Yes" << endl;
-        }
-        else
-        {
-            cout << "No" << endl;
-        }
+        ll n, k;
+        cin >> n >> k;
+        ll x = (n + k - 1) / k;
+        ll temp = x * k;
+        ll ans = (temp + n - 1) / n;
+        cout << ans << endl;
     }
 
     return 0;

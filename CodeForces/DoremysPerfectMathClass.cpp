@@ -14,16 +14,18 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll x;
-        cin >> x;
-        if (x % 33 == 0)
+        ll n;
+        cin >> n;
+        vector<ll> a(n);
+        ll g = 0;
+        for (auto &i : a)
         {
-            cout << "Yes" << endl;
+            cin >> i;
+            g = __gcd(g, i);
         }
-        else
-        {
-            cout << "No" << endl;
-        }
+        ll ans = 0;
+        ans = a[n - 1] / g;
+        cout << ans << "\n";
     }
 
     return 0;

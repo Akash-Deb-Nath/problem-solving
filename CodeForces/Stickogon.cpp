@@ -14,16 +14,21 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll x;
-        cin >> x;
-        if (x % 33 == 0)
+        ll n;
+        cin >> n;
+        vector<ll> a(n);
+        map<ll, ll> mp;
+        for (auto &i : a)
         {
-            cout << "Yes" << endl;
+            cin >> i;
+            mp[i]++;
         }
-        else
+        ll ans = 0;
+        for (auto &i : mp)
         {
-            cout << "No" << endl;
+            ans = ans + i.second / 3;
         }
+        cout << ans << "\n";
     }
 
     return 0;

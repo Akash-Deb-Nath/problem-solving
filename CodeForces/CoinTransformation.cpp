@@ -14,16 +14,15 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll x;
-        cin >> x;
-        if (x % 33 == 0)
+        ll n;
+        cin >> n;
+        ll ans = 1;
+        while (n > 3)
         {
-            cout << "Yes" << endl;
+            n = n / 4;
+            ans = ans * 2;
         }
-        else
-        {
-            cout << "No" << endl;
-        }
+        cout << ans << endl;
     }
 
     return 0;

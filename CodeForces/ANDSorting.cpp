@@ -14,16 +14,19 @@ int main()
     cin >> t;
     while (t--)
     {
-        ll x;
-        cin >> x;
-        if (x % 33 == 0)
+        ll n;
+        cin >> n;
+        ll ans = -1;
+        vector<ll> p(n);
+        for (ll i = 0; i < n; i++)
         {
-            cout << "Yes" << endl;
+            cin >> p[i];
+            if (p[i] != i)
+            {
+                ans &= i;
+            }
         }
-        else
-        {
-            cout << "No" << endl;
-        }
+        cout << ans << endl;
     }
 
     return 0;
