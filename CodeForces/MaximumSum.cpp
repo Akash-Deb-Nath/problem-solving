@@ -2,36 +2,34 @@
 
 using namespace std;
 
+#define ll long long int
+
 int main()
 {
-    int t, n, k;
+    ll t;
     cin >> t;
     while (t--)
     {
-        int result, count = 0;
+        ll n, k;
         cin >> n >> k;
-        int a[n];
-        for (int i = 0; i < n; i++)
+        vector<ll> a(n);
+        for (ll i = 0; i < n; i++)
         {
             cin >> a[i];
         }
-        sort(a, a + n);
-        for (int i = 0; i < k; i++)
+        sort(a.begin(), a.end());
+        vector<ll> pref(n + 1);
+        for (ll i = 0; i < n; i++)
         {
-            if (a[0] + a[1] >= a[n - 1])
-            {
-                n = n - 1;
-            }
-            else
-            {
-                a[0] = a[i + 2];
-                a[1] = a[i + 3];
-            }
+            pref[i + 1] = pref[i] + a[i];
         }
-        for (int i = 0; i < n; i++)
+        ll ans = 0;
+        for (ll i = 0; i <= k; i++)
         {
-            count = count + a[i];
+            ll x = k - i;
+            ans = max(ans, pref[n - x] - pref[2 * i]);
         }
+        cout << ans << '\n';
     }
 
     return 0;
