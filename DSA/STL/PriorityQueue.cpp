@@ -23,6 +23,8 @@ int main()
 
     cout << "Max heap size: " << mx.size() << endl;
     ll n = mx.size();
+    ll top = mx.top();
+    cout << "Max heap top: " << top << endl;
     for (ll i = 0; i < n; i++)
     {
         cout << mx.top() << " ";

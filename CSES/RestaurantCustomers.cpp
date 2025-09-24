@@ -20,11 +20,22 @@ void solve()
 {
     ll n;
     cin >> n;
-    vector<ll> a(n);
-    for (auto &i : a)
+    vector<pair<ll, ll>> times;
+    for (ll i = 0; i < n; i++)
     {
-        cin >> i;
+        ll arrival, departure;
+        cin >> arrival >> departure;
+        times.pb({arrival, 1});
+        times.pb({departure, -1});
     }
+    sort(times.begin(), times.end());
+    ll cur = 0, mx = 0;
+    for (ll i = 0; i < times.size(); i++)
+    {
+        cur += times[i].S;
+        mx = max(mx, cur);
+    }
+    cout << mx << "\n";
 }
 
 int main()
@@ -33,12 +44,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    ll t;
-    cin >> t;
-    while (t--)
-    {
-        solve();
-    }
+    solve();
 
     return 0;
 }

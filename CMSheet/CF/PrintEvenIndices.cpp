@@ -4,6 +4,14 @@ using namespace std;
 
 #define ll long long int
 
+void printEvenIndices(vector<ll> &a, ll N)
+{
+    if (N == 0)
+    {
+        return;
+    }
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
